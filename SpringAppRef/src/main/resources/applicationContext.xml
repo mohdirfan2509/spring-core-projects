@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+   <bean class="com.app.bean.Product" id="product">
+   <property name="pName" value="iphone17"/>
+   </bean>
+   
+   <bean class="com.app.bean.Customer" id="customer">
+   <property name="cName" value="Zabi Sir"/>
+   </bean>
+   
+   <bean class="com.app.bean.OrderServices" id="service">
+   <constructor-arg name="product" ref="product"/>
+   <constructor-arg name="customer" ref="customer"/>
+   
+   </bean>
+   
+
+</beans>
