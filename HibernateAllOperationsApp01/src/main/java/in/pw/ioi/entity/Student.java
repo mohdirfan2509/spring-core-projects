@@ -24,6 +24,7 @@ public class Student {
 	@Column(name="stdAge")
 	private Integer sAge;
 	
+	
 	@Column(name="stdAddress")
 	private String sAddress;
 

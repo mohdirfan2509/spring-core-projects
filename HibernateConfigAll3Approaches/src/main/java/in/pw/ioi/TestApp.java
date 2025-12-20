@@ -19,6 +19,8 @@ public class TestApp {
 		Transaction transaction= session.beginTransaction();
 		boolean flag=false;
 		
+
+		
 		try {
 			   Student std= new Student("Dhoni",43,"Chennai");
 			   session.persist(std);  //insert query sent to the database for execution : result : cache
