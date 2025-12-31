@@ -14,7 +14,7 @@ public class TestApp {
 		
 		Session session=HibernateUtil.getSessionFactoryObj().openSession();
 		Transaction transaction= session.beginTransaction();
-		int students=session.createNamedQuery("Student.insertIntoStudentBackUp").setParameter("age",20).executeUpdate();
+		int students=session.createNamedMutationQuery("Student.insertIntoStudentBackUp").setParameter("age",20).executeUpdate();
 		transaction.commit();
 		
 		

@@ -14,7 +14,10 @@ import jakarta.persistence.Table;
 @Table
 @NamedQueries(
 		value= {
-				@NamedQuery(name="Student.findAll",query="FROM Student")
+				@NamedQuery(name="Student.findAll",query="FROM Student"), //Full loading 
+				@NamedQuery(name="Student.findByAge",query="FROM Student WHERE sAge> :age"), // full loading
+				@NamedQuery(name="Student.findAddress",query="SELECT sAddress FROM Student") // partial loading
+			
 		}
 		
 		)

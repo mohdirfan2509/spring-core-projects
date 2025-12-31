@@ -10,8 +10,6 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="in.pw.ioi.entity.Student" />
-        <mapping class="in.pw.ioi.entity.StudentBackUp" />
-        
+        <mapping class="in.pw.ioi.entity.Student" />        
     </session-factory>
 </hibernate-configuration>

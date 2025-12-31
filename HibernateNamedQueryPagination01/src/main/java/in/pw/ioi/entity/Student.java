@@ -14,7 +14,8 @@ import jakarta.persistence.Table;
 @Table
 @NamedQueries(
 		value= {
-				@NamedQuery(name="Student.insertIntoStudentBackUp",query="INSERT INTO StudentBackUp(stuName,stuAge,stuAddress) SELECT s.sName, s.sAge, s.sAddress FROM Student s WHERE s.sAge> :age")
+				@NamedQuery(name="Student.pagination",query="FROM Student ORDER BY sId"),
+				@NamedQuery(name="Student.getCount",query="SELECT COUNT(s.sId) FROM Student s")
 		}
 		
 		)
