@@ -5,7 +5,6 @@ package in.pw.ioi;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
 import in.pw.ioi.entity.Student;
 
 public class TestApp {
@@ -15,7 +14,7 @@ public class TestApp {
 		
 //		step 1: activate hibernate Environment
 		Session session= new Configuration().configure().buildSessionFactory().openSession();
-		
+//		step 2: begin transaction
 		Transaction transaction= session.beginTransaction();
 		boolean flag=false;
 		
@@ -27,7 +26,6 @@ public class TestApp {
 			flag=false;
 			e.printStackTrace();
 		}
-		
 		if(flag) {
 			System.in.read();
 			transaction.commit(); //  from cache --> pushed to database
