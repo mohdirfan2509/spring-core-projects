@@ -3,7 +3,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Types;
 
 public class MainApp {
 	
@@ -16,16 +15,14 @@ public class MainApp {
 		
 		Connection connection =DriverManager.getConnection(url,userName,password);
 		System.out.println("Connection to "+url);
-		CallableStatement cs= connection.prepareCall("{CALL GET_STUDENT_DETAILS_BY_ID(?,?,?,?)}");
+		CallableStatement cs= connection.prepareCall("{CALL INSERT_STUDENT_DETAILS(?,?,?,?)}");
 		
-		cs.setInt(1,2);
-		cs.registerOutParameter(2,Types.VARCHAR);
-		cs.registerOutParameter(3,Types.INTEGER);
-		cs.registerOutParameter(4,Types.VARCHAR);
+		cs.setInt(1,39);
+		cs.setString(2,"Vimal");
+		cs.setInt(3,42);
+		cs.setString(4,"Malabar");
 		
-		cs.execute();
-		System.out.println(cs.getString(2));
-		System.out.println(cs.getInt(3));
-		System.out.println(cs.getString(4));
+	    cs.execute();
+		
 	}
 }
