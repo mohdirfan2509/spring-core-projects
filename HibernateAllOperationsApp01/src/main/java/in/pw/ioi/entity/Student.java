@@ -31,6 +31,4 @@ public class Student {
 	@Column(name="stdDob")
 	private LocalDate sDob;
 	
-	@Column(name="")
-	private 
-}
+	
