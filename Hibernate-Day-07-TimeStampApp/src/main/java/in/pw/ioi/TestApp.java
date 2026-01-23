@@ -1,7 +1,4 @@
 package in.pw.ioi;
-
-
-
 import java.time.LocalDateTime;
 
 import org.hibernate.Session;
@@ -13,7 +10,6 @@ import in.pw.ioi.entity.BankAccount;
 public class TestApp {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		
 //		step 1: activate hibernate Environment
 		Session session= new Configuration().configure().buildSessionFactory().openSession();
@@ -33,7 +29,7 @@ public class TestApp {
 				   session.merge(acc);
 				   flag=true;
 			   }else {
-				   System.out.println("Record with Id=1 doesn't exist !!");
+				   System.out.println("Record with Id=1 doesn't exist ! !");
 			   }
 		}catch(Exception e) {
 			flag=false;
