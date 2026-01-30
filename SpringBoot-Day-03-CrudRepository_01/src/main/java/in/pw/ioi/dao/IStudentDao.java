@@ -1,11 +1,9 @@
 package in.pw.ioi.dao;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-import in.pw.ioi.model.Student;
+import in.pw.ioi.model.StudentTab;
 
-@Repository("dao")
-public interface IStudentDao extends CrudRepository<Student, Integer> {
+public interface IStudentDao extends CrudRepository<StudentTab, Integer> {
 
 }

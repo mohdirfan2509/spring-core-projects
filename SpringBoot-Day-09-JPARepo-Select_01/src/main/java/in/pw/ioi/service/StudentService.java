@@ -3,7 +3,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import in.pw.ioi.dao.IStudentDao;
-import in.pw.ioi.model.StudentTab;
+import in.pw.ioi.model.Student;
 
 @Service
 @Transactional
@@ -18,7 +18,7 @@ public class StudentService {
 		this.dao = dao;
 	}
 	
-	public StudentTab saveStudent(StudentTab student) {
+	public Student saveStudent(Student student) {
 		
 	    System.out.println("Implemention class is :"+ dao.getClass().getName());
 		return dao.save(student);
