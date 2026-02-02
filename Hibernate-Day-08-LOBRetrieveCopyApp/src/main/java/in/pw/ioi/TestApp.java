@@ -55,11 +55,11 @@ public class TestApp {
 		
 		if(flag) {
 			System.in.read();
-			transaction.commit();
+//			transaction.commit();
 			System.out.println("Record saved to database");
 			
 		}else {
-			transaction.rollback();
+//			transaction.rollback();
 			System.out.println("Record not saved to database");
 		}
 		
