@@ -48,12 +48,14 @@ public class StudentService {
 	public StudentTab updateStudentById(Integer id) {
 		
 		try {
-			  stdPersist= dao.findStudentById(id);
+			  StudentTab stdPersistent= findStudentById(id);
+			  
+			  stdPersistent.setStdName("Tendulkar");
+			  return dao.save(stdPersistent);
 			
 		} catch (EntityNotFoundException e) {
 			throw e;
 		}
-		return null;
 	}
 
 }

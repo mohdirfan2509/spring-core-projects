@@ -8,7 +8,7 @@ import jakarta.persistence.EntityNotFoundException;
 
 @Service
 @Transactional
-public class StudentService {
+public class StudentService{
 	
 	
 	private IStudentDao dao;

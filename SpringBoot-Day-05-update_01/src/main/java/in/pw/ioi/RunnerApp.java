@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import in.pw.ioi.model.StudentTab;
 import in.pw.ioi.service.StudentService;
 
 @SpringBootApplication
@@ -27,7 +28,8 @@ public class RunnerApp implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		stdService.deleteStudentById(11);
+		StudentTab student =stdService.updateStudentById(2);
+		System.out.println("Updated Info : "+student);
 	}
 
 }
