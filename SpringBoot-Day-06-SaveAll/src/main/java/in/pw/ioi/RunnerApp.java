@@ -1,5 +1,8 @@
 package in.pw.ioi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,36 +11,33 @@ import in.pw.ioi.model.StudentTab;
 import in.pw.ioi.service.StudentService;
 
 @SpringBootApplication
-public class SpringBootDay03CrudRepository01Application implements CommandLineRunner {
+public class RunnerApp implements CommandLineRunner {
     
 	private StudentService stdService;
 	
 	
 	
-	public SpringBootDay03CrudRepository01Application(StudentService stdService) {
+	public RunnerApp(StudentService stdService) {
 		super();
 		this.stdService = stdService;
 	}
 
 	public static void main(String[] args) {
 		System.out.println("************Container Started**********");
-		SpringApplication.run(SpringBootDay03CrudRepository01Application.class, args);
+		SpringApplication.run(RunnerApp.class, args);
 		System.out.println("************Container Stopped**********");
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		StudentTab student= new StudentTab();
-		student.setStdId(16);
-		student.setStdName("Mahesh");
-		student.setStdAge(65);
-		student.setStdAddress("Siddipet");
-		StudentTab stdPresisted =stdService.saveStudent(student);
-		System.out.println(stdPresisted);
+		List<StudentTab> students= new ArrayList<StudentTab>();
+		students.add(new StudentTab("Gopal",33,"Kanpur"));
+		students.add(new StudentTab("Alakh",39,"Ahmedabad"));
+		students.add(new StudentTab("Prateek",30,"Karimnagar"));
 		
-        
-		
+		Iterable<StudentTab> presistedStudents= stdService.saveAllStudents(students);
+		System.out.println(presistedStudents);
 	}
 
 }
