@@ -73,16 +73,12 @@ public class RunnerApp implements CommandLineRunner {
 //			String name=opt.get();
 //			System.out.println(name);
 //		}
-//		
+		
 //		int  RowCount=dao.insertRow();
 //		System.out.println(RowCount);
 		
-//		dao.deleteOneRow();
-//		System.out.println("Row deleted Successfully !!");
-		
-		int RowCount=dao.updateOneRow();
+		int RowCount=dao.insertRowToBackUp();
 		System.out.println(RowCount);
-		
 
 	
 	}

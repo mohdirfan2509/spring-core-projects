@@ -1,4 +1,4 @@
-package in.pw.ioi.dto;
+package in.pw.ioi.model;
 
 public class StudentTabDTO {
 	
@@ -13,6 +13,13 @@ public class StudentTabDTO {
 		this.stdName = stdName;
 		this.stdAge = stdAge;
 	}
+
+	@Override
+	public String toString() {
+		return "StudentTabDTO [stdName=" + stdName + ", stdAge=" + stdAge + "]";
+	}
+	
+	
 	
 	
 	

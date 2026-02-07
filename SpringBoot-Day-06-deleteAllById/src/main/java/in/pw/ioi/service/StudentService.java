@@ -75,13 +75,10 @@ public class StudentService {
 		
 		return dao.count();
 	}
-	
-	public void deleteEntity(Integer id) {
-		StudentTab student=findStudentById(id);
-		dao.delete(student);
-		System.out.println("Student "+student.getStdName()+" deleted successfully !!");
+		
+	public void deleteGivenIds(List<Integer> ids) {
+		
+		dao.deleteAllById(ids);
 	}
-	
-	public void deleteGivenIds(Iterable<>)
 	
 }

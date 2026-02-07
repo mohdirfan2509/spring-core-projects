@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import in.pw.ioi.dto.StudentTabDTO;
 import in.pw.ioi.model.StudentTab;
+import in.pw.ioi.model.StudentTabDTO;
 
 public interface IStudentDao extends JpaRepository<StudentTab, Integer> {
 	
@@ -20,6 +20,6 @@ public interface IStudentDao extends JpaRepository<StudentTab, Integer> {
 	@Query("select stdName from StudentTab")
 	public List<String> getOneColumn();
 	
-	@Query("select in.pw.ioi.entity.StudentDTO() from StudentTab")
+	@Query("SELECT new in.pw.ioi.model.StudentTabDTO(s.stdName, s.stdAge) FROM StudentTab s")
 	public List<StudentTabDTO> getAllDTO();
 }

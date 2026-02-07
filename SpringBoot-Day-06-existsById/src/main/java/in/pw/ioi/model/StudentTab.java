@@ -16,7 +16,7 @@ public class StudentTab {
 	private Integer stdId;
 	
 	private String stdName;
-		
+	
 
 	private Integer stdAge;
 	
@@ -26,9 +26,18 @@ public class StudentTab {
 	public StudentTab() {
 		
 	}
-	
-	
-	
+
+	public StudentTab(String stdName, Integer stdAge, String stdAddress){
+		super();
+		this.stdName = stdName;
+		this.stdAge = stdAge;
+		this.stdAddress = stdAddress;
+	}
+
+
+
+
+
 
 	public Integer getStdId() {
 		return stdId;

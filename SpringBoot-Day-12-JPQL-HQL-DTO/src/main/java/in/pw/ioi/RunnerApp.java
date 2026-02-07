@@ -6,15 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import in.pw.ioi.dao.IStudentDao;
-import in.pw.ioi.model.StudentTab;
+import in.pw.ioi.model.StudentTabDTO;
 import in.pw.ioi.service.StudentService;
 
 @SpringBootApplication
+@EntityScan(basePackages="in.pw.ioi.model")
+@EnableJpaRepositories(basePackages="in.pw.ioi.dao")
 public class RunnerApp implements CommandLineRunner {
     
-	@Autowired
+	@Autowired   
 	private StudentService stdService;
 	@Autowired
 	private IStudentDao dao;
@@ -52,9 +56,12 @@ public class RunnerApp implements CommandLineRunner {
 //		List<String> names =dao.getOneColumn();
 //		System.out.println(names);
 		
+		List<StudentTabDTO> students=dao.getAllDTO();
+		System.out.println(students);
+		
 		
 	
-	
+	 
 	}
 
 }

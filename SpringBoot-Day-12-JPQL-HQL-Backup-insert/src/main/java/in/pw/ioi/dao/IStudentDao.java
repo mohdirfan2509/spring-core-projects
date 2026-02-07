@@ -38,15 +38,8 @@ public interface IStudentDao extends JpaRepository<StudentTab, Integer> {
 	public int insertRow();
 	
 	@Modifying
-	@Query("DELETE FROM StudentTab WHERE stdId=14")
+	@Query("INSERT INTO StudentTabBackup(sName,sAge,sAddress) SELECT s.stdName,s.stdAge,s.stdAddress FROM StudentTab s WHERE s.stdAge>20")
 	@Transactional
-	public void deleteOneRow();
-	
-	@Modifying
-	@Query("UPDATE StudentTab SET stdAge=99 WHERE stdId=12")
-	@Transactional
-	public int updateOneRow();
-	
-
+	public int insertRowToBackUp();
 	
 }
