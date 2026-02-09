@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import in.pw.ioi.model.StudentTab;
 import in.pw.ioi.service.StudentService;
 
 @SpringBootApplication
@@ -29,8 +30,14 @@ public class RunnerApp implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		boolean exists=stdService.idExists(11);
-		System.out.println(exists);
+		List<Integer> ids= List.of(1,2,5);
+		
+		Iterable<StudentTab> students=stdService.getAllByids(ids);
+		
+		for(StudentTab student:students){
+			
+			System.out.println(student);
+		}
 	}
 
 }
