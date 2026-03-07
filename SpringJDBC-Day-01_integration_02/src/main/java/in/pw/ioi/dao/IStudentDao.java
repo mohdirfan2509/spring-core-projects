@@ -10,5 +10,6 @@ public interface IStudentDao {
 	int deleteById(int id);
 	Student findById(int id);
 	List<Student> findAll();
+	// List<Student> findAllStudents();
 
 }
